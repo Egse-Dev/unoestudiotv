@@ -23,140 +23,110 @@
 body {
   font-family: 'Arial', sans-serif;
   background-color: var(--white);
+  color: var(--color-principal);
+}
+ /* ---------------  INICIO DE MENU HAMBURGURESA-------------------------------------- */
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0 1rem;
+}
+
+.navbar{
+  display: flex;
+}
+
+
+.ul-items{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 1rem;
+}
+
+.navbar a{
+  text-decoration: none;
   color: var(--dark);
 }
 
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  position: relative;
-  background-color: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 10;
-}
 
-/* LOGO Y ICONO MENU */
-.div-img {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-
-
-.div-img img:first-child {
-  width: 30px;
-  height: 30px;
-
-}
+ .logo {
+  max-width: 10rem;
+  height: auto;
+  margin: 1rem;
+ }
 
 
 
 
-.div-img img:last-child {
-  height: 100px;
-  width: auto;
-}
-
-/* NAVBAR DESKTOP */
-.navbar {
-  display: flex;
-}
-
-.ul-items {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-}
-
-.navbar-link {
-  text-decoration: none;
-  color: var(--color-principal);
-  font-weight: 600;
-  transition: var(--transition-fast);
-}
-
-.navbar-link:hover {
-  color: var(--color-acento);
-}
-
-/* MODAL NAVBAR  */
-.modal-background {
-  position: fixed;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.8);
-  transition: left var(--transition-fast);
-
-}
-
-.modal-navbar {
-  background-color: var(--color-secundario);
-  width: 80%;
-  height: 100%;
-  padding: 2rem;
-  position: relative;
-}
-
-.modal-icon-x {
-  width: 25px;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.modal-ul-items {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  margin-top: 4rem;
-}
-
-.modal-link {
-  text-decoration: none;
-  color: var(--color-principal);
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* CARRITO */
-.header-carrito {
-  position: relative;
-  cursor: pointer;
-}
-
-.header-carrito img {
-  width: 30px;
-}
-
-.carrito-notificacion {
-  background: var(--color-acento);
-  color: #fff;
-  border-radius: 50%;
-  padding: 4px 8px;
-  font-size: 0.8rem;
-  position: absolute;
-  top: -5px;
-  right: -5px;
-}
+ .abrir , .cerrar{
+  display: none;
+  
+ }
 
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    display: none;
+ @media screen and (max-width: 550px){
+
+  .abrir, .cerrar{
+    display: block;
+     display: block;
+    border: 0;
+    font-size: 1.8rem;
+    background: transparent;
+    cursor: pointer;
+    left: 1rem;
   }
 
-  .modal-background.active {
-    left: 0;
+  .cerrar{
+    color: var(--white);
   }
+
+  .navbar{
+    opacity: 0;
+    visibility: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: var(--dark);
+    padding: 2rem;
+    bottom: 0;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8);
+    gap: 1rem;
+
+  } 
+
+
+
+  .navbar.visible{
+    opacity: 1;
+    visibility: visible;
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
+  }
+
+  .ul-items{
+    flex-direction: column;
+    align-items: end;
+    
+  }
+
+  .navbar a{
+  text-decoration: none;
+  color: var(--white);
 }
+
+ }
+
+
+
+
+
 
 /* Hero Section---------------------------------------- */
 
@@ -205,7 +175,7 @@ header {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition:  0.3s;
 }
 
 .hero-contenedor button:hover {
@@ -289,7 +259,6 @@ header {
 }
 
 .bodas img:hover, .aventuras img:hover, .celebracion img:hover {
-  cursor: all-scroll;
   width: 200px;
   opacity: 1;
   filter: contrast(120%);
@@ -309,11 +278,12 @@ header {
 
 .pack-boda, .pack-video, .pack-cumple, .pack-graduacion {
   width: 450px;
+  height: 40rem;
   padding: 2rem;
   background-color: #171717;
   color: var(--white);
   border-radius: 2%;
-  height: auto;
+
 }
 
 .pack-boda h1, .pack-video h1, .pack-cumple h1, .pack-graduacion h1 {

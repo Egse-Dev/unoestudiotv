@@ -6,16 +6,27 @@
     <title>Uno Estudios tv</title>
     <link rel="icon" href="img/icon.png">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
 </head>
 <body>
     <header>
         <!-- inicio de menu   -->
-         <div class="div-img">
-            <img src="img/icon-menu.png" alt="menus-icon">
-            <img class="logo" src="img/logo.png" alt="">
-         </div>
 
-         <nav class="navbar">
+            <img class="logo" src="img/logo.png" alt="">
+            
+            <button  id="abrir" class="abrir" >
+                <i class="bi bi-list"></i>
+            </button>
+
+
+         <nav id="navbar" class="navbar" >
+
+            <button id="cerrar" class="cerrar" >
+                <i class="bi bi-x"></i>
+            </button>
+
             <ul class="ul-items" >
                 <li>
                     <a class="navbar-link" href="/">Inicio</a>
@@ -35,33 +46,7 @@
 
          <!-- final de menu  -->
 
-         <!-- inicio modal barra de menu -->
-         <div class="modal-background">
-
-            <nav class="modal-navbar">
-                <img class="modal-icon-x" src="img/icon-x.png" alt="icon de cierre de menu">
-                <ul class="modal-ul-items" >
-                    <li>
-                        <a class="modal-link" href="/">Inicio</a>
-                    </li>
-                    <li>
-                        <a class="modal-link" href="#portafolio">Portafolio</a>
-                    </li>
-                    <li>
-                        <a class="modal-link" href="#paquetes">Paquetes</a>
-                    </li>
-                    <li>
-                        <a class="modal-link" href="#contacto">Contacto</a>
-                    </li>
-                </ul>
-            </nav>
-         </div>
-         <!-- final modal barra de menu -->
-
-         <div class="header-carrito">
-            <div class="carrito-notificacion">2</div>
-            <img src="img/icon-carrito.png" alt="carrito de compras">
-         </div>
+        
     </header>
 
 
@@ -440,6 +425,6 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
